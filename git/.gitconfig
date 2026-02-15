@@ -1,0 +1,57 @@
+[user]
+	email = ad158@rice.edu
+	name = ahitagnied
+
+[core]
+	editor = vim
+	autocrlf = input
+	excludesFile = ~/.gitignore_global
+	pager = less -FR
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
+[rerere]
+	enabled = true
+
+[credential]
+	helper = osxkeychain
+
+[http]
+	postBuffer = 524288000
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[alias]
+	s     = status -sb
+	co    = checkout
+	sw    = switch
+	br    = branch
+	ci    = commit
+	cm    = commit -m
+	aa    = add -A
+	d     = diff
+	ds    = diff --staged
+	lg    = log --oneline --graph --decorate -20
+	lga   = log --oneline --graph --decorate --all
+	undo  = reset --soft HEAD~1
+	amend = commit --amend --no-edit
+	wip   = !git add -A && git commit -m 'wip'
+	nuke  = !git reset --hard HEAD && git clean -fd
