@@ -38,6 +38,14 @@ cheat() { curl -s "cheat.sh/$1"; }
 gitignore() { curl -sL "https://www.toptal.com/developers/gitignore/api/$1"; }
 serve() { python3 -m http.server "${1:-8000}"; }
 
+cpuwatch() {
+    while true; do
+        pct=$(ps -u "$USER" -o %cpu= | awk '{sum+=$1} END {printf "%.1f%%", sum}')
+        printf "\r%s  %s" "$(date +%H:%M:%S)" "$pct"
+        sleep 2
+    done
+}
+
 note() {
     local f="$HOME/notes.md"
     [[ $# -eq 0 ]] && { cat "$f" 2>/dev/null || echo "no notes yet"; return; }

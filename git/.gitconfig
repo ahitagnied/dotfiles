@@ -28,7 +28,7 @@
 	enabled = true
 
 [credential]
-	helper = osxkeychain
+	helper = cache
 
 [http]
 	postBuffer = 524288000
