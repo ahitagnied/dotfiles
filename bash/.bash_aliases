@@ -62,6 +62,7 @@ alias ports="lsof -iTCP -sTCP:LISTEN -nP"
 
 # misc
 alias cls="clear"
+alias cr="clear; reset"
 alias h="history"
 alias now="date '+%Y-%m-%d %H:%M:%S'"
 alias path='echo -e ${PATH//:/\\n}'
@@ -74,4 +75,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     alias showfiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder"
     alias hidefiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder"
     alias brewup="brew update && brew upgrade && brew cleanup"
+    alias die="sudo pmset -a disablesleep 0"
+    alias stay-awake="sudo pmset -a disablesleep 1"
 fi
