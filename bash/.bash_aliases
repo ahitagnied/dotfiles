@@ -62,7 +62,7 @@ alias ports="lsof -iTCP -sTCP:LISTEN -nP"
 
 # misc
 alias cls="clear"
-alias cr="clear; reset"
+alias cl="clear; reset"
 alias h="history"
 alias now="date '+%Y-%m-%d %H:%M:%S'"
 alias path='echo -e ${PATH//:/\\n}'
